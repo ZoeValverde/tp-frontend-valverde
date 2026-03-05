@@ -32,9 +32,6 @@ const Login = () => {
         const response = login({ email, password, name })
         if (!response) {
             setError(true)
-            setName("")
-            setPassword("")
-            setEmail("")
             return
         }
 
