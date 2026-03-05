@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react"
 import { ChatContext } from "../context/ChatContext"
-// import { users } from "../services/mockApi.js"
 
 const Aside = () => {
   const [search, setSearch] = useState("")

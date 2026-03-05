@@ -7,11 +7,19 @@ const Register = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [name, setName] = useState("")
+  const navigate = useNavigate()
+  const {setLoggedUser} = useContext(ChatContext)
+  
+  const handleNavigate= ()=> {
+   navigate("/Login")
+  }
 
+  const handleRegister = () => {
+    setLoggedUser(true)
+    navigate("/")
+}
   const { handleAccounts } = useContext(ChatContext)
- const navigate = useNavigate()
     
-
  const handleChangeEmail = (e) => {
     setEmail(e.target.value)
     }
@@ -57,8 +65,10 @@ const Register = () => {
           value={password}
           onChange={handleChangePassword}
         />
-        <button type="submit">INGRESAR</button>
-      </form>
+        <button onClick={handleRegister}>INGRESAR</button>
+          </form>
+          <h2>¿Ya tienes una cuenta?</h2>
+      <button onClick={handleNavigate}>Inicia Sesion aquí</button>
     </section>
   )
 }

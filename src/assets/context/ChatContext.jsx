@@ -39,12 +39,12 @@ const login = (userData) => {
     return false;
   }
 
-
+  setLoggedUser(true)
   return true;
 };
 
   const logout = () => {
-    localStorage.removeItem("user")
+    setLoggedUser(false)
   }
 
   const handleMessages = (newMessage) => {
@@ -61,7 +61,7 @@ const login = (userData) => {
   const selectedUser = users.find(user => user.id === selectedUserId)
 
   return (
-    <ChatContext.Provider value={{ users, handleSelectedUserId, login, logout, loggedUser, handleMessages, selectedUser, handleAccounts }}>
+    <ChatContext.Provider value={{ users, handleSelectedUserId, login, logout, loggedUser, handleMessages, selectedUser, handleAccounts, setLoggedUser }}>
       {children}
     </ChatContext.Provider>
   )
