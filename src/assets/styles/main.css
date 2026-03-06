@@ -17,8 +17,30 @@ aside {
   flex-direction: column;
   background-color: #f0f2f5;
   width: 260px;
-  overflow-y: scroll;
+    overflow-y: scroll;
 }
+
+/*Chats section*/
+.chats-section{
+display: flex;
+flex-direction: column;
+flex: 1;
+}
+
+/* User Account Panel*/
+.user-Panel{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: aqua;
+}
+
+.user-Panel img{
+  width: 50px;
+  border-radius: 50%;
+}
+
 
 
 /* aside styles */
@@ -42,42 +64,12 @@ aside h1 {
   color: gray;
 }
 
-/* style contacts*/
-.chats-section{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.chats-section button{
-margin-top: 10px;
-width: 100%;
-text-align: left;
-background: transparent;
-border: none;
-}
-
-.user-Panel{
-    display: flex;
-    background-color: aqua;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-
-.user-Panel img{
-    border-radius: 50%;
-    width: 50px;
-}
-
-.user-Panel button{
-    padding: 10px;
-}
 /* chat styles */
 
 .chat {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .chat-cont-empty {

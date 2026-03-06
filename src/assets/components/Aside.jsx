@@ -30,7 +30,7 @@ const Aside = () => {
                 {
                     filteredUsers.length===0? <p>no hay contactos</p>: 
                     filteredUsers.map((user) => (
-                      <button className="chat" key={user.id} onClick={() => handleClick(user.id)}>
+                      <button className="Chats" key={user.id} onClick={() => handleClick(user.id)}>
                             <h3>{user.firstName} {user.lastName}</h3>
                         </button>
                     ))
