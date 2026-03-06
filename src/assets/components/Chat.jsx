@@ -27,7 +27,7 @@ const Chat = () => {
 
     const currentTime = new Date()
     const newMessage = {
-      author: "Ana",
+      author: "Me",
       time: currentTime.getHours() + ":" + currentTime.getMinutes(),
       text: text
     }
@@ -36,10 +36,6 @@ const Chat = () => {
     setText("")
   }
 
-  const handleLogout = () => {
-    logout()
-    navigate("/login")
-  }
 
   useEffect(() => {
     if (chatBodyRef.current) {
@@ -60,14 +56,13 @@ const Chat = () => {
       <header>
         <div>
           <h2>{selectedUser.firstName} {selectedUser.lastName}</h2>
-          <p>{selectedUser.address.country}</p>
+          <p>{selectedUser.status}</p>
         </div>
-        <button onClick={handleLogout}>Cerrar sesión</button>
       </header>
       <div className="chat-body" ref={chatBodyRef}>
         {
-          selectedUser.messages.map((message) => <div key={message.id} className={`message ${message.author === "Ana" ? "me" : "received"}`}>
-            <p><b>{message.author}</b>: {message.text}</p>
+          selectedUser.messages.map((message) => <div key={message.id} className={`message ${message.author === "Me" ? "me" : "received"}`}>
+            <p> {message.text}</p>
             <p className="timestamp">{message.time}</p>
           </div>)
         }

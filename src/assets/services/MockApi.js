@@ -3,7 +3,7 @@ const users = [
     id: 1,
     firstName: "Emily",
     lastName: "Johnson",
-    address: { country: "United States" },
+    status: "Online",
     image: "https://i.pravatar.cc/150?img=1",
     messages: [
       { author: "Emily", text: "Hello there", time: "09:12" },
@@ -14,7 +14,7 @@ const users = [
     id: 2,
     firstName: "Michael",
     lastName: "Williams",
-    address: { country: "Germany" },
+     status: "Online",
     image: "https://i.pravatar.cc/150?img=2",
     messages: [
       { author: "Michael", text: "Server deployed", time: "10:01" },
@@ -25,7 +25,7 @@ const users = [
     id: 3,
     firstName: "Sophia",
     lastName: "Brown",
-    address: { country: "Japan" },
+    status: "Online",
     image: "https://i.pravatar.cc/150?img=3",
     messages: [
       { author: "Sophia", text: "Draft ready", time: "11:22" },
@@ -36,7 +36,7 @@ const users = [
     id: 4,
     firstName: "Liam",
     lastName: "Miller",
-    address: { country: "Canada" },
+     status: "Ofline",
     image: "https://i.pravatar.cc/150?img=4",
     messages: [
       { author: "Liam", text: "Build completed", time: "12:10" },
@@ -47,7 +47,7 @@ const users = [
     id: 5,
     firstName: "Olivia",
     lastName: "Davis",
-    address: { country: "United Kingdom" },
+     status: "Online",
     image: "https://i.pravatar.cc/150?img=5",
     messages: [
       { author: "Olivia", text: "Design uploaded", time: "13:45" },
@@ -58,7 +58,7 @@ const users = [
     id: 6,
     firstName: "Noah",
     lastName: "Garcia",
-    address: { country: "Mexico" },
+     status: "Online",
     image: "https://i.pravatar.cc/150?img=6",
     messages: [
       { author: "Noah", text: "Database seeded", time: "14:03" },
@@ -69,7 +69,7 @@ const users = [
     id: 7,
     firstName: "Ava",
     lastName: "Martinez",
-    address: { country: "Spain" },
+     status: "Online",
     image: "https://i.pravatar.cc/150?img=7",
     messages: [
       { author: "Ava", text: "Testing UI", time: "15:20" },
@@ -80,7 +80,7 @@ const users = [
     id: 8,
     firstName: "Elijah",
     lastName: "Rodriguez",
-    address: { country: "Argentina" },
+     status: "Ofline",
     image: "https://i.pravatar.cc/150?img=8",
     messages: [
       { author: "Elijah", text: "Client contacted", time: "16:18" },
@@ -91,7 +91,7 @@ const users = [
     id: 9,
     firstName: "Isabella",
     lastName: "Hernandez",
-    address: { country: "Chile" },
+     status: "Online",
     image: "https://i.pravatar.cc/150?img=9",
     messages: [
       { author: "Isabella", text: "Report sent", time: "17:02" },
@@ -102,7 +102,7 @@ const users = [
     id: 10,
     firstName: "James",
     lastName: "Lopez",
-    address: { country: "Brazil" },
+     status: "Ofline",
     image: "https://i.pravatar.cc/150?img=10",
     messages: [
       { author: "James", text: "Meeting confirmed", time: "18:40" },

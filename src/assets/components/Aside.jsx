@@ -26,19 +26,21 @@ const Aside = () => {
       {
         filteredUsers.length === 0 && <p className="not-found-text">No se encontraron contactos</p>
       }
-      <ul>
-        {
-          filteredUsers.map((user) => (
-            <li key={user.id} onClick={() => handleClick(user.id)}>
-              <img src={user.image} alt="" />
-              <div>
-                {user.firstName} {user.lastName}
-                <small>{user.address.country}</small>
-              </div>
-            </li>
-          ))
-        }
-      </ul>
+      <section className="chats-section">
+                {
+                    filteredUsers.length===0? <p>no hay contactos</p>: 
+                    filteredUsers.map((user) => (
+                      <button className="chat" key={user.id} onClick={() => handleClick(user.id)}>
+                            <h3>{user.firstName} {user.lastName}</h3>
+                        </button>
+                    ))
+                }
+            </section>
+            <section className="user-Panel">
+                <img src="https://placehold.co/100x100" alt="foto de perfil"/>
+                <h2>Natalie</h2>
+                <button>cerrar sesion</button>
+            </section>
     </aside>
   )
 }

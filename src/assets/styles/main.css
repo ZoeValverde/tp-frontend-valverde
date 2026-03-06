@@ -13,15 +13,13 @@
 }
 
 aside {
+  display: flex;
+  flex-direction: column;
   background-color: #f0f2f5;
   width: 260px;
-  padding: 20px;
   overflow-y: scroll;
 }
 
-section {
-  flex: 1;
-}
 
 /* aside styles */
 
@@ -44,34 +42,37 @@ aside h1 {
   color: gray;
 }
 
-ul {
-  list-style: none;
+/* style contacts*/
+.chats-section{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-li {
-  margin-bottom: 10px;
-  display: flex;
-  border-radius: 4px;
-  border-bottom: 1px solid #ddd;
-  padding: 10px;
-  cursor: pointer;
-  gap: 10px;
+.chats-section button{
+margin-top: 10px;
+width: 100%;
+text-align: left;
+background: transparent;
+border: none;
 }
 
-li:hover {
-  background-color: #e6e6e6;
+.user-Panel{
+    display: flex;
+    background-color: aqua;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
-li img {
-  width: 40px;
-  border-radius: 50%;
+.user-Panel img{
+    border-radius: 50%;
+    width: 50px;
 }
 
-li small {
-  display: block;
-  color: gray;
+.user-Panel button{
+    padding: 10px;
 }
-
 /* chat styles */
 
 .chat {
