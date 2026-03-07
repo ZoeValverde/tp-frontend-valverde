@@ -46,7 +46,6 @@ const login = (userData) => {
   const logout = () => {
     setLoggedUser(false)
   }
-
   const handleMessages = (newMessage) => {
     setUsers((prevValue) => prevValue.map((user) =>
       user.id === selectedUserId
@@ -61,7 +60,7 @@ const login = (userData) => {
   const selectedUser = users.find(user => user.id === selectedUserId)
 
   return (
-    <ChatContext.Provider value={{ users, handleSelectedUserId, login, logout, loggedUser, handleMessages, selectedUser, handleAccounts, setLoggedUser }}>
+    <ChatContext.Provider value={{ users, handleSelectedUserId, login, logout, loggedUser, handleMessages, selectedUser, handleAccounts, setLoggedUser}}>
       {children}
     </ChatContext.Provider>
   )

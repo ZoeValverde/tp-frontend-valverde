@@ -6,9 +6,7 @@ const Chat = () => {
   const [text, setText] = useState("")
   const chatBodyRef = useRef(null)
 
-  const { selectedUser, logout, handleMessages } = useContext(ChatContext)
-
-  const navigate = useNavigate()
+  const { selectedUser, handleMessages } = useContext(ChatContext)
 
   const handleChangeText = (event) => {
     setText(event.target.value)

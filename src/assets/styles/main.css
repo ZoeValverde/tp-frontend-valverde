@@ -12,6 +12,12 @@
   background-color: #f9f9f9;
 }
 
+/* Register */
+
+
+
+/* aside styles */
+
 aside {
   display: flex;
   flex-direction: column;
@@ -19,31 +25,6 @@ aside {
   width: 260px;
     overflow-y: scroll;
 }
-
-/*Chats section*/
-.chats-section{
-display: flex;
-flex-direction: column;
-flex: 1;
-}
-
-/* User Account Panel*/
-.user-Panel{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: aqua;
-}
-
-.user-Panel img{
-  width: 50px;
-  border-radius: 50%;
-}
-
-
-
-/* aside styles */
 
 aside h1 {
   margin-bottom: 5px;
@@ -57,6 +38,49 @@ aside h1 {
   border-radius: 4px;
   border: 1px solid #ccc;
 }
+
+/*Chats section*/
+.chats-section{
+display: flex;
+flex-direction: column;
+flex: 1;
+}
+
+
+.Chats{
+  display: flex;
+background: transparent;
+border: none;
+padding: 10px;
+text-align: start;
+}
+
+.Chats img{
+  width: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.chats-section button:Hover, .chats-section button:focus{
+background-color: aqua;
+}
+
+/* User Account Panel*/
+.user-Panel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 20px;
+  background-color: aqua;
+}
+
+.user-Panel img{
+  width: 50px;
+  border-radius: 50%;
+}
+
+
 
 .not-found-text {
   font-size: 14px;
@@ -76,6 +100,7 @@ aside h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
 
 .chat-cont-empty p {

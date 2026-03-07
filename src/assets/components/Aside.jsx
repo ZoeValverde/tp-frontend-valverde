@@ -4,7 +4,11 @@ import { ChatContext } from "../context/ChatContext"
 const Aside = () => {
   const [search, setSearch] = useState("")
 
-  const { users, handleSelectedUserId } = useContext(ChatContext)
+  const { users, handleSelectedUserId, logout} = useContext(ChatContext)
+  
+  const handleLogout = () => {
+  logout()
+}
 
   const handleChange = (event) => {
     setSearch(event.target.value)
@@ -31,15 +35,18 @@ const Aside = () => {
                     filteredUsers.length===0? <p>no hay contactos</p>: 
                     filteredUsers.map((user) => (
                       <button className="Chats" key={user.id} onClick={() => handleClick(user.id)}>
-                            <h3>{user.firstName} {user.lastName}</h3>
+                        <img src={user.image} alt="" />
+                        <div>
+                        <h3>{user.firstName} {user.lastName}</h3>
+                        <p>{user.status}</p>
+                        </div>
                         </button>
                     ))
                 }
             </section>
             <section className="user-Panel">
-                <img src="https://placehold.co/100x100" alt="foto de perfil"/>
-                <h2>Natalie</h2>
-                <button>cerrar sesion</button>
+                <img src="https://placehold.co/100x100" alt="foto de perfil" />
+                <button onClick={handleLogout}>cerrar sesion</button>
             </section>
     </aside>
   )
