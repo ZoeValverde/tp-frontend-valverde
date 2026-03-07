@@ -40,17 +40,19 @@ const Login = () => {
     }
     
     return (
-        <section>
-            <h2>INCIA SESIO</h2>
+        <section className="Login">
+            <h2>INICIA SESIÓN</h2>
             <form onSubmit={handleSubmit}>
                 <input type="email" placeholder="correo electronico"  onChange={handleChangeEmail} value={email}/>
                 <input type="text" placeholder="nombre de usuario"  onChange={handleChangeName} value={name}/>
                 <input type="password" placeholder="contraseña"  onChange={handleChangePassword} value={password}/>
                 <button>INGRESAR</button> 
                 {error && <h3>Error en alguno de los datos</h3>}
-        </form>
+            </form>
+            <div className="Login-Register">
         <h2>¿No tienes una cuenta?</h2>
             <button onClick={handleNavigate}>Registrate Aquí</button>
+        </div>
         </section>
     )
 }

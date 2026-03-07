@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect, useContext } from "react"
 import { ChatContext } from "../context/ChatContext.jsx"
-import { useNavigate } from "react-router-dom"
 
 const Chat = () => {
   const [text, setText] = useState("")

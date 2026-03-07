@@ -55,7 +55,7 @@ const Register = () => {
   }
 
   return (
-    <section>
+    <section className="Register">
       <h2>REGISTRATE</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -90,9 +90,11 @@ const Register = () => {
         }
         <button onClick={handleSubmit}>INGRESAR</button>
 
-          </form>
+      </form>
+      <div className="register-login">
           <h2>¿Ya tienes una cuenta?</h2>
-      <button onClick={handleNavigate}>Inicia Sesion aquí</button>
+      <button onClick={handleNavigate}>Inicia sesion aquí</button>
+    </div>
     </section>
   )
 }
