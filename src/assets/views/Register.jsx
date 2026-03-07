@@ -7,20 +7,20 @@ const Register = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [name, setName] = useState("")
-  const [errorName, setErrorName] = useState(null)
-  const [errorPassword, setErrorPassword] = useState(null)
+  const [errorName, setErrorName] = useState(true)
+  const [errorPassword, setErrorPassword] = useState(true)
   const [errorBlank, setErrorBlank]= useState(null)
-  const { setLoggedUser } = useContext(ChatContext)
+  const { setLoggedUser} = useContext(ChatContext)
   const navigate = useNavigate()
   
   const handleNavigate= ()=> {
    navigate("/Login")
   }
 
-  const { handleAccounts } = useContext(ChatContext)
     
  const handleChangeEmail = (e) => {
    setEmail(e.target.value)
+   
    setErrorBlank("")
   }
 
@@ -43,9 +43,11 @@ const Register = () => {
         setErrorBlank(true)
         return
       }    
-      if (name.length < 3 || (password.length < 6)  ) { 
-        setErrorName(true)
-        setErrorPassword(true)
+    
+      setErrorPassword(password.length < 6)
+      setErrorName(name.length < 3)
+      
+      if (name.length < 3 || password.length < 6) {
         return
       }
     
@@ -79,15 +81,9 @@ const Register = () => {
           required
           onChange={handleChangePassword}
         />
-        {
-          errorName && <p>El nombre de usuario requiere minimo 3 caracteres</p>
-        }
-        {
-          errorPassword && <p>La contraseña requiere minimo 6 caracteres</p>
-        }
-        {
-          errorBlank && <p>Es necesario completar los datos</p>
-        }
+        {errorName && <p>El nombre de usuario requiere minimo 3 caracteres</p>}
+        {errorPassword && <p>La contraseña requiere minimo 6 caracteres</p>}
+        {errorBlank && <p>Es necesario completar los datos</p>}
         <button onClick={handleSubmit}>INGRESAR</button>
 
       </form>

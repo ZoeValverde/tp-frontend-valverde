@@ -7,7 +7,8 @@ const Login = () => {
     const [password, setPassword] = useState("")
     const [name, setName] = useState("")
     const [error, setError] = useState(null)
-  const { login } = useContext(ChatContext)
+    const [errorBlank, setErrorBlank]= useState(null)
+    const { login } = useContext(ChatContext)
   const navigate = useNavigate()
     
     const handleNavigate = () => {
@@ -26,10 +27,15 @@ const Login = () => {
         setName(e.target.value)
     }
 
+
     const handleSubmit = (e) => {
         setError(null)
         e.preventDefault()
         const response = login({ email, password, name })
+        if (!name || !email || !password) {
+            setErrorBlank(true)
+            return
+        }
         if (!response) {
             setError(true)
             return
@@ -48,6 +54,7 @@ const Login = () => {
                 <input type="password" placeholder="contraseña"  onChange={handleChangePassword} value={password}/>
                 <button>INGRESAR</button> 
                 {error && <h3>Error en alguno de los datos</h3>}
+                {errorBlank && <p>Es necesario completar los datos</p>}
             </form>
             <div className="Login-Register">
         <h2>¿No tienes una cuenta?</h2>
