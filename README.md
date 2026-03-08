@@ -1,16 +1,42 @@
-# React + Vite
+## Aplicación de mensajes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto trata de una aplicación que como interfaz se basa en los softwares de mensajería, con su lista de contactos y su zona de chats como home y luego sus autenticación de datos con un login y un registro para crear una cuenta. 
 
-Currently, two official plugins are available:
+Para este proyecto se usó React, los lenguajes principales fueron JavaScript, HTML y CSS, con una librería de NPM con el nombre de “react-router-dom” para las rutas de la aplicación.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### ¿Cómo ejecutar el proyecto de manera local?
 
-## React Compiler
+Para poder abrir el proyecto de manera local se necesita tener instalado “Node.js” y tener actualizado el “NPM” 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+#### Pasos:
 
-## Expanding the ESLint configuration
+Paso 1:  Copiar el link del repositorio en el botón "clone" o desde el link de la página.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Paso 2: ir al Git Bash y poner los comandos "Git clone + link del repositorio".
+
+Paso 3: Ir al Visual Studio Code y al abrir la carpeta poner en su terminal “npm install .”
+
+Paso 4: Escribir “npm run dev” en la terminal y entrar al el link del localhost.
+
+
+#### Instrucciones para el deploy
+
+###### Estructura del proyecto
+Toda la base del proyecto:
+
+- Assets
+- Main
+
+Dentro de Assets hay 6 carpetas: 
+- Components
+- Context
+- Routes
+- Services
+- Styles 
+- Views
+
+El proyecto tiene un main, donde dentro del contexto (ChatContext) tiene el “RouterApp”,  allí se encuentra todas las rutas del proyecto, Home siendo protegido por un componente llamado “RouteProtected”, en la que su función se basa en dejar entrar al Home a quien esté logueado. 
+Home retorna dos componentes: Aside y Chat, ambas siendo lo principal de la aplicación, de un lado mostrando una lista de contactos y del otro en la chat de cada uno.
+Además tiene otras dos Views importantes, el Login y el Register, donde en la autenticación de la aplicación, en la que ayuda a proteger el home validando la cuenta del usuario, en caso de no tener, el register permite crear uno para poder ingresar al Home.
+
+Otras dos views que aportan al proyecto son “NotFound” en caso de ingresar una ruta no existente se ejecuta, y “Acerca” que muestra más información sobre el proyecto.
