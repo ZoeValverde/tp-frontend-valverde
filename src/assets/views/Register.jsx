@@ -8,9 +8,10 @@ const Register = () => {
   const [password, setPassword] = useState("")
   const [name, setName] = useState("")
   const [errorName, setErrorName] = useState(true)
+  const [errorEmail, setErrorEmail]= useState("")
   const [errorPassword, setErrorPassword] = useState(true)
-  const [errorBlank, setErrorBlank]= useState(null)
-  const { setLoggedUser} = useContext(ChatContext)
+  const [errorBlank, setErrorBlank]= useState("")
+  const { setLoggedUser, handleAccounts} = useContext(ChatContext)
   const navigate = useNavigate()
   
   const handleNavigate= ()=> {
@@ -20,7 +21,7 @@ const Register = () => {
     
  const handleChangeEmail = (e) => {
    setEmail(e.target.value)
-   
+   setErrorEmail("")
    setErrorBlank("")
   }
 
@@ -43,11 +44,14 @@ const Register = () => {
         setErrorBlank(true)
         return
       }    
-    
+
+const arroba = email.includes("@")
+
+      setErrorEmail(!arroba)
       setErrorPassword(password.length < 6)
       setErrorName(name.length < 3)
       
-      if (name.length < 3 || password.length < 6) {
+      if (name.length < 3 || password.length < 6 || !arroba) {
         return
       }
     
@@ -81,6 +85,7 @@ const Register = () => {
           required
           onChange={handleChangePassword}
         />
+        {errorEmail && <p>Se necesita un Email valido</p>} 
         {errorName && <p>El nombre de usuario requiere minimo 3 caracteres</p>}
         {errorPassword && <p>La contraseña requiere minimo 6 caracteres</p>}
         {errorBlank && <p>Es necesario completar los datos</p>}

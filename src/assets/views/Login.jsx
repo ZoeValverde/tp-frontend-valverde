@@ -16,15 +16,21 @@ const Login = () => {
     }
 
     const handleChangeEmail = (e) => { 
-    setEmail(e.target.value)
+        setEmail(e.target.value)
+        setErrorBlank("")
+        setError("")
     }
 
     const handleChangePassword = (e) => {
         setPassword(e.target.value)
+         setErrorBlank("")
+        setError("")
     }
 
     const handleChangeName = (e) => {
         setName(e.target.value)
+         setErrorBlank("")
+        setError("")
     }
 
 
